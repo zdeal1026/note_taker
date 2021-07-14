@@ -25,3 +25,8 @@ app.get('/api/notes', (req, res)=> {
     const data = JSON.parse(fs.readFileSync('db/db.json', 'utf-8'));
     res.json(data);
 })
+
+//port listening
+app.listen(PORT, () => {
+    console.log('listening on port http://localhost:${PORT}');
+});
