@@ -1,10 +1,10 @@
-let $noteTitle = $('.note-title');
-let $noteText = $('note.textarea');
-let $saveNoteBtn = $('.save-note');
-let $newNoteBtn= $('new-note');
-let $noteList = $('.list-container .list-group');
+let noteTitle;
+let noteText;
+let saveNoteBtn;
+let newNoteBtn;
+let noteList;
 
-if (window.location.pathname === './assets/notes') {
+if (window.location.pathname === './notes') {
   noteTitle = document.querySelector('.note-title');
   noteText = document.querySelector('.note-textarea');
   saveNoteBtn = document.querySelector('.save-note');
@@ -59,6 +59,8 @@ const renderActiveNote = () => {
     noteTitle.value = activeNote.title;
     noteText.value = activeNote.text;
   } else {
+    noteTitle.removeAttribute('readonly');
+    noteText.removeAttribute('readonly');
     noteTitle.value = '';
     noteText.value = '';
   }
