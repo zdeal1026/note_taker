@@ -7,3 +7,11 @@ const path = require('path');
 const app = express();
 const PORT = 8080;
 
+//creating routes
+app.get('/', (req,res)=> {
+    res/sendfile(path.join(__dirname, 'public/index.html'));
+});
+
+app.get('/notes', (req, res)=> {
+    res.sendfile(path.join(__dirname, 'public/notes.html'))
+});
