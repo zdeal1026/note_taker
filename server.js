@@ -8,7 +8,7 @@ const { v4: uuidv4 } = require('uuid')
 
 //setting port
 const app = express();
-const PORT = 3000;
+const PORT = 3030;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -16,7 +16,7 @@ app.use(express.json());
 
 //creating routes
 app.get('/', (req,res)=> {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
+    res.sendFile(path.join(__dirname, 'public/assets/index.html'));
 });
 
 app.get('/notes', (req, res)=> {
