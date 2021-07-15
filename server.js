@@ -26,11 +26,21 @@ app.get('/api/notes', (req, res)=> {
     res.json(data);
 });
 
+//posts content and creates id for notes
 app.post('/api/notes', (req, res)=> {
     const body = {...req.body};
     const data =JSON.parse(fs.readFileSync('./db/db.json', 'utf-8'));
     fs.writeFileSync('./db/db/json', JSON.stringify(data.concat(body)), 'utf-8');
     res.json(body);
+})
+
+//filters note ids to delete specific notes
+app.delete('/api/notes/:id', (req,res) => {
+    const id =req.params.id;
+    const objects = JSON.parse(fs.readFileSync('./db/db.json','utf-8'));
+    const items = objects.filter(item => item.id !==id);
+    fs.writeFileSync('./db/db.json', JSON.stringify(items), 'utf-8');
+    res.json(items);
 })
 
 //port listening
