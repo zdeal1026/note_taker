@@ -51,7 +51,7 @@ For any questions please use the contact information below
 ## Contact
 
  email jedimastershake@gmail.com, 
- github repo 
+ github repo https://github.com/zdeal1026/note_taker
 
 ## Links
 
