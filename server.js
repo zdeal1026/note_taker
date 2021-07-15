@@ -24,9 +24,16 @@ app.get('/notes', (req, res)=> {
 app.get('/api/notes', (req, res)=> {
     const data = JSON.parse(fs.readFileSync('db/db.json', 'utf-8'));
     res.json(data);
+});
+
+app.post('/api/notes', (req, res)=> {
+    const body = {...req.body};
+    const data =JSON.parse(fs.readFileSync('./db/db.json', 'utf-8'));
+    fs.writeFileSync('./db/db/json', JSON.stringify(data.concat(body)), 'utf-8');
+    res.json(body);
 })
 
 //port listening
 app.listen(PORT, () => {
-    console.log('listening on port http://localhost:${PORT}');
+    console.log('listening on port http://localhost${PORT}');
 });
