@@ -8,7 +8,7 @@ const { v4: uuidv4 } = require('uuid')
 
 //setting port
 const app = express();
-const PORT = 8080;
+const PORT = 3000;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -16,7 +16,7 @@ app.use(express.json());
 
 //creating routes
 app.get('/', (req,res)=> {
-    res/sendfile(path.join(__dirname, 'public/index.html'));
+    res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
 app.get('/notes', (req, res)=> {
@@ -48,5 +48,5 @@ app.delete('/api/notes/:id', (req,res) => {
 
 //port listening
 app.listen(PORT, () => {
-    console.log('listening on port http://localhost${PORT}');
+    console.log(`listening on port http://localhost${PORT}`);
 });
