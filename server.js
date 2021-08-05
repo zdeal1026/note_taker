@@ -14,13 +14,15 @@ const PORT = 3030;
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname,"public")))
+
 //creating routes
 app.get('/', (req,res)=> {
-    res.sendFile(path.join(__dirname, 'public/assets/index.html'));
+    res.sendFile(path.join(__dirname, 'index.html'));
 });
 
-app.get('/notes.html', (req, res)=> {
-    res.sendFile(path.join(__dirname, 'public/assets/notes.html'))
+app.get('/notes', (req, res)=> {
+    res.sendFile(path.join(__dirname, 'public/notes.html'))
 });
 
 app.get('/api/notes', (req, res)=> {
@@ -33,7 +35,7 @@ app.post('/api/notes', (req, res)=> {
     const body = {...req.body};
     body.id = uuidv4();
     const data =JSON.parse(fs.readFileSync('./db/db.json', 'utf-8'));
-    fs.writeFileSync('./db/db/json', JSON.stringify(data.concat(body)), 'utf-8');
+    fs.writeFileSync('./db/db.json', JSON.stringify(data.concat(body)), 'utf-8');
     res.json(body);
 })
 
