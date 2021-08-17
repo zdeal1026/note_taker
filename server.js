@@ -8,7 +8,7 @@ const { v4: uuidv4 } = require('uuid')
 
 //setting port
 const app = express();
-const PORT = 5000;
+const PORT = process.env.PORT || 5000;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -49,6 +49,6 @@ app.delete('/api/notes/:id', (req,res) => {
 })
 
 //port listening
-app.listen(PORT, () => {
-    console.log(`listening on port http://localhost${PORT}`);
-});
+app.listen(PORT, function() {
+    console.log("App listening on PORT: " + PORT);
+});  
