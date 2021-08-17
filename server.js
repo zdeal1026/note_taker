@@ -8,7 +8,7 @@ const { v4: uuidv4 } = require('uuid')
 
 //setting port
 const app = express();
-const PORT = 3030;
+const PORT = 8080;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
