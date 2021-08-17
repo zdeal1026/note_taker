@@ -18,7 +18,7 @@
 
 * [Contact](#contact)
 
-* [Links](#links)![Note Taker (1)](https://user-images.githubusercontent.com/82068157/129656917-5f37ac04-9cfe-4323-8b6a-b6412611c31c.png)
+* [Links](#links)
 
 
 ## Description
