@@ -14,8 +14,6 @@
 
 * [Contributing](#contributing)
 
-* [Tests](#tests)
-
 * [Questions](#questions)
 
 * [Contact](#contact)
@@ -24,14 +22,15 @@
 
 ## Description
 
-
+FOr this assignment, we were given starter code and asked to complete it. Once completed, the app was to be launced on Heroku.
 
 ## Installation
 
-
+To start the app install your modules (npm i), specifically we use the express module in this app.
 
 ## Usage
 
+This app can be used to make a to-do list of things to be completed
 
 ## License
 
@@ -40,9 +39,6 @@ MIT license used.
 ## Contributing
 
 Allow users to contribute to the application using Contributor Covenant (https://www.contributor-covenant.org/)
-
-## Tests
-
 
 ## Questions
 
@@ -54,5 +50,6 @@ For any questions please use the contact information below
  github repo https://github.com/zdeal1026/note_taker
 
 ## Links
+heroku https://zdnotetaker.herokuapp.com/
 
 
